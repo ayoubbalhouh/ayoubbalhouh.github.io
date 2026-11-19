@@ -3,228 +3,323 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayoub Balhouh · Junior Web Developer</title>
-<meta name="description" content="Portfolio di Ayoub Balhouh, Junior Web Developer (PHP, Laravel, WordPress) a Padova.">
+<title>Ayoub Balhouh · Junior Web Developer a Padova</title>
+<meta name="description" content="Portfolio di Ayoub Balhouh, Junior Web Developer a Padova: Laravel, PHP, WordPress e JavaScript. Siti, e-commerce e web app, con competenze di digital marketing.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ayoub Balhouh · Junior Web Developer">
+<meta property="og:description" content="Laravel, PHP, WordPress e JavaScript. Guarda i progetti e scarica il CV.">
+<meta property="og:url" content="https://ayoubbalhouh.github.io/">
+<meta property="og:image" content="https://ayoubbalhouh.github.io/img/studio-forbice.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="theme-color" content="#0b1020">
 <link rel="icon" href="foto.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
+<a class="skip" href="#progetti">Vai ai progetti</a>
+
+<header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#home" class="logo">Ayoub<span>.</span></a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    <ul class="links">
-      <li><a href="#chi-sono">Chi sono</a></li>
-      <li><a href="#competenze">Competenze</a></li>
-      <li><a href="#progetti">Progetti</a></li>
-      <li><a href="#percorso">Percorso</a></li>
-      <li><a href="#contatti" class="btn btn-small">Contattami</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header id="home" class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <p class="eyebrow">Ciao, sono</p>
-      <h1>Ayoub Balhouh</h1>
-      <h2 class="typed">Junior Web Developer</h2>
-      <p class="lead">Creo siti web, e-commerce e applicazioni con <strong>PHP, Laravel, MySQL e WordPress</strong>. Unisco sviluppo e digital marketing per costruire siti che funzionano e portano risultati.</p>
-      <div class="hero-actions">
-        <a href="#progetti" class="btn">Guarda i progetti</a>
-        <a href="CV_Ayoub_Balhouh.pdf" class="btn btn-outline" download>Scarica il CV</a>
-      </div>
-      <p class="location">📍 Padova · Vicenza · Treviso</p>
-    </div>
-    <div class="hero-photo">
-      <img src="foto.png" alt="Foto di Ayoub Balhouh">
-    </div>
+    <nav class="links" id="links" aria-label="Menu principale">
+      <a href="#progetti">Progetti</a>
+      <a href="#competenze">Competenze</a>
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#percorso">Percorso</a>
+    </nav>
+    <a href="#contatti" class="btn btn-sm nav-cta">Contattami</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Apri il menu" aria-expanded="false" aria-controls="links"><span></span><span></span></button>
   </div>
 </header>
 
-<section id="chi-sono" class="section">
-  <div class="container narrow">
-    <h3 class="section-title">Chi sono</h3>
-    <p>Sono un <strong>Web Developer certificato</strong> (Fondazione San Nicolò – Accademia delle Professioni, Padova) con una qualifica in <strong>Social Media e Digital Marketing</strong>.</p>
-    <p>Prima di arrivare allo sviluppo web ho lavorato per tre anni in produzione e ho fatto molti lavori pratici: questo mi ha insegnato a essere preciso, affidabile e a risolvere i problemi in autonomia. Oggi porto la stessa attenzione ai dettagli nel codice.</p>
-    <p>Uso ogni giorno strumenti di <strong>intelligenza artificiale</strong> per scrivere, correggere e migliorare il codice più velocemente, e imparo in fretta nuove tecnologie.</p>
-    <div class="facts">
-      <div><span>🇮🇹</span>Italiano C1</div>
-      <div><span>🇬🇧</span>Inglese B2</div>
-      <div><span>🇫🇷</span>Francese B1</div>
-      <div><span>🚗</span>Patente B</div>
-    </div>
-  </div>
-</section>
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="status"><span class="dot"></span> Disponibile da subito · Padova, Vicenza, Treviso</p>
+        <h1>Ciao, sono Ayoub.<br>Creo siti e web app che <span class="grad">portano clienti.</span></h1>
+        <p class="typed-line">Junior Web Developer · <span class="typed" id="typed">Laravel &amp; PHP</span></p>
+        <p class="lead">Sviluppo con <strong>PHP, Laravel, MySQL, WordPress e JavaScript</strong>. Vengo dal digital marketing, quindi penso anche a SEO, conversioni e numeri.</p>
+        <div class="hero-actions">
+          <a href="#progetti" class="btn btn-light">Guarda i progetti ↓</a>
+          <a href="CV_Ayoub_Balhouh.pdf" class="btn btn-ghost" download>Scarica il CV</a>
+        </div>
+        <ul class="stats">
+          <li><strong>6</strong><span>progetti pubblicati</span></li>
+          <li><strong>8</strong><span>test automatici</span></li>
+          <li><strong>3</strong><span>lingue straniere</span></li>
+        </ul>
+      </div>
 
-<section id="competenze" class="section alt">
-  <div class="container">
-    <h3 class="section-title">Competenze</h3>
-    <div class="grid skills">
-      <div class="card">
-        <div class="icon">⚙️</div>
-        <h4>Back-end</h4>
-        <div class="tags"><span>PHP</span><span>Laravel</span><span>MySQL</span><span>API REST</span></div>
-      </div>
-      <div class="card">
-        <div class="icon">🎨</div>
-        <h4>Front-end</h4>
-        <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>jQuery</span><span>AJAX</span><span>Responsive</span></div>
-      </div>
-      <div class="card">
-        <div class="icon">🧩</div>
-        <h4>CMS &amp; Server</h4>
-        <div class="tags"><span>WordPress</span><span>WooCommerce</span><span>Server web</span><span>Cloud</span></div>
-      </div>
-      <div class="card">
-        <div class="icon">📣</div>
-        <h4>Digital marketing</h4>
-        <div class="tags"><span>Social media</span><span>Campagne ads</span><span>Contenuti</span><span>Strumenti AI</span></div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <img src="foto.png" alt="Foto di Ayoub Balhouh" width="250" height="250">
+        </div>
+        <span class="float f1">Laravel</span>
+        <span class="float f2">WordPress</span>
+        <span class="float f3">JavaScript</span>
+        <div class="code-card" aria-hidden="true">
+          <span class="c-key">$ayoub</span> = <span class="c-fn">new</span> Developer([<br>
+          &nbsp;&nbsp;<span class="c-str">'città'</span> =&gt; <span class="c-str">'Padova'</span>,<br>
+          &nbsp;&nbsp;<span class="c-str">'stack'</span> =&gt; [<span class="c-str">'Laravel'</span>, <span class="c-str">'WP'</span>],<br>
+          &nbsp;&nbsp;<span class="c-str">'pronto'</span> =&gt; <span class="c-fn">true</span>,<br>
+          ]);
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="progetti" class="section">
-  <div class="container">
-    <h3 class="section-title">Progetti</h3>
-    <div class="grid projects">
-
-      <article class="project">
-        <a href="https://github.com/ayoubbalhouh/salone-prenotazioni" class="thumb" target="_blank" rel="noopener">
-          <img src="img/studio-forbice.jpg" alt="Anteprima del sistema di prenotazione Studio Forbice" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Studio Forbice · Prenotazioni online</h4>
-          <p>Sistema di prenotazione per un barbiere: orari liberi calcolati in tempo reale, email di conferma e area riservata con agenda, servizi e chiusure. Con test automatici.</p>
-          <div class="tags"><span>Laravel</span><span>PHP</span><span>MySQL / SQLite</span><span>PHPUnit</span></div>
-          <div class="project-links">
-            <a href="https://github.com/ayoubbalhouh/salone-prenotazioni#readme" class="btn btn-small" target="_blank" rel="noopener">Screenshot e dettagli</a>
-            <a href="https://github.com/ayoubbalhouh/salone-prenotazioni" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/casale-tema-wp#readme" class="thumb" target="_blank" rel="noopener">
-          <img src="img/casale-wp.jpg" alt="Anteprima del tema WordPress Casale per agriturismi" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Casale · Tema WordPress</h4>
-          <p>Tema a blocchi per agriturismi: post type "Camere" con prezzo e ospiti mostrati tramite Block Bindings, theme.json, 7 pattern e template modificabili dall'Editor del sito.</p>
-          <div class="tags"><span>WordPress</span><span>PHP</span><span>theme.json</span><span>Gutenberg</span></div>
-          <div class="project-links">
-            <a href="progetti/casale-tema-wp/casale.zip" class="btn btn-small" download>Scarica il tema</a>
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/casale-tema-wp#readme" class="btn btn-small btn-outline" target="_blank" rel="noopener">Screenshot e codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <a href="progetti/conti-fatture/" class="thumb" target="_blank" rel="noopener">
-          <img src="img/conti-fatture.jpg" alt="Anteprima della web app Conti per gestire le fatture" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Conti · Gestione fatture</h4>
-          <p>Web app per fatture e clienti: IVA, stati e scadenze, grafico del fatturato, esportazione CSV, PDF e controllo della partita IVA.</p>
-          <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Web app</span></div>
-          <div class="project-links">
-            <a href="progetti/conti-fatture/" class="btn btn-small" target="_blank" rel="noopener">Demo</a>
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/conti-fatture" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <a href="progetti/spinta-agenzia/" class="thumb" target="_blank" rel="noopener">
-          <img src="img/spinta-agenzia.jpg" alt="Anteprima della landing page dell'agenzia Spinta" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Spinta · Landing page per agenzia</h4>
-          <p>Landing page per un'agenzia di marketing: modulo preventivo in 3 passi, tracciamento conversioni con dataLayer e UTM, SEO e dati strutturati.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Tracking</span><span>SEO</span></div>
-          <div class="project-links">
-            <a href="progetti/spinta-agenzia/" class="btn btn-small" target="_blank" rel="noopener">Demo</a>
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/spinta-agenzia" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <a href="progetti/grano-nero/" class="thumb" target="_blank" rel="noopener">
-          <img src="img/grano-nero.jpg" alt="Anteprima del negozio online Grano Nero" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Grano Nero · E-commerce</h4>
-          <p>Negozio online per una torrefazione: catalogo con filtri e ricerca, carrello salvato nel browser e checkout con validazione.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
-          <div class="project-links">
-            <a href="progetti/grano-nero/" class="btn btn-small" target="_blank" rel="noopener">Demo</a>
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/grano-nero" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <a href="progetti/pizzeria-brace/" class="thumb" target="_blank" rel="noopener">
-          <img src="img/pizzeria-brace.jpg" alt="Anteprima del sito della pizzeria Brace" loading="lazy">
-        </a>
-        <div class="project-body">
-          <h4>Brace · Pizzeria con ordine online</h4>
-          <p>Sito per una pizzeria napoletana: menu interattivo, ordine per asporto o consegna con fasce orarie calcolate dagli orari di apertura.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SVG</span></div>
-          <div class="project-links">
-            <a href="progetti/pizzeria-brace/" class="btn btn-small" target="_blank" rel="noopener">Demo</a>
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/pizzeria-brace" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="thumb thumb-me">👨‍💻</div>
-        <div class="project-body">
-          <h4>Questo portfolio</h4>
-          <p>Sito personale responsive, pubblicato su GitHub Pages.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-          <div class="project-links">
-            <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io" class="btn btn-small btn-outline" target="_blank" rel="noopener">Codice</a>
-          </div>
-        </div>
-      </article>
-
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PHP</span><span>Laravel</span><span>MySQL</span><span>WordPress</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>API REST</span><span>Git</span><span>SEO</span><span>Meta Ads</span><span>PHPUnit</span>
+        <span>PHP</span><span>Laravel</span><span>MySQL</span><span>WordPress</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>API REST</span><span>Git</span><span>SEO</span><span>Meta Ads</span><span>PHPUnit</span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="percorso" class="section alt">
-  <div class="container narrow">
-    <h3 class="section-title">Percorso</h3>
-    <ol class="timeline">
-      <li><span class="when">2025 – 2026</span><h4>Tecnico specializzato in Social Media e Digital Marketing</h4><p>Studio Centro Personale e Traduzioni S.r.l., Cittadella</p></li>
-      <li><span class="when">2024 – 2025</span><h4>Web Developer – Certificazione di competenze professionali</h4><p>Fondazione San Nicolò – Accademia delle Professioni, Padova</p></li>
-      <li><span class="when">2022 – 2025</span><h4>Capo macchina di produzione</h4><p>Azienda di produzione materie plastiche, Veneto</p></li>
-      <li><span class="when">2021 – 2022</span><h4>Ingegneria Civile</h4><p>Università degli Studi di Padova</p></li>
-      <li><span class="when">2021</span><h4>Corso di Manifattura Digitale + stage di 3 mesi</h4><p>ENAIP Veneto</p></li>
-    </ol>
-  </div>
-</section>
+  <!-- PROGETTI -->
+  <section id="progetti" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">01 · Progetti</p>
+        <h2>Lavori che puoi aprire, provare e leggere riga per riga.</h2>
+      </div>
 
-<section id="contatti" class="section contact">
-  <div class="container narrow center">
-    <h3 class="section-title">Lavoriamo insieme</h3>
-    <p>Cerco il mio primo ruolo come Junior Web Developer in un'agenzia o in un'azienda. Sono disponibile anche per tirocinio o apprendistato.</p>
-    <div class="contact-actions">
-      <a href="mailto:ayoub.balhouh@yahoo.com" class="btn">✉️ ayoub.balhouh@yahoo.com</a>
-      <a href="https://www.linkedin.com/in/ayoub-balhouh-688922360" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/ayoubbalhouh" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+      <div class="filters" role="toolbar" aria-label="Filtra i progetti">
+        <button class="chip active" data-filter="tutti">Tutti</button>
+        <button class="chip" data-filter="php">Laravel / PHP</button>
+        <button class="chip" data-filter="wp">WordPress</button>
+        <button class="chip" data-filter="js">JavaScript</button>
+        <button class="chip" data-filter="mkt">Marketing</button>
+      </div>
+
+      <div class="projects" id="projects">
+
+        <article class="project featured" data-cat="php">
+          <a class="shot" href="https://github.com/ayoubbalhouh/salone-prenotazioni#readme" target="_blank" rel="noopener" aria-label="Apri Studio Forbice">
+            <span class="browser"><i></i><i></i><i></i></span>
+            <img src="img/studio-forbice.jpg" alt="Sistema di prenotazione Studio Forbice" loading="lazy">
+          </a>
+          <div class="p-body">
+            <p class="p-kicker">Laravel · Back-end completo</p>
+            <h3>Studio Forbice</h3>
+            <p>Sistema di prenotazione per un barbiere. Il cliente sceglie servizio, giorno e orario e riceve la conferma via email; il titolare gestisce agenda, servizi e ferie dall'area riservata.</p>
+            <ul class="p-points">
+              <li>Orari liberi calcolati da apertura, pausa e appuntamenti</li>
+              <li>Nessuna doppia prenotazione (transazioni)</li>
+              <li>8 test PHPUnit + GitHub Actions</li>
+            </ul>
+            <div class="tags"><span>Laravel 13</span><span>PHP 8.3</span><span>MySQL / SQLite</span><span>Blade</span><span>PHPUnit</span></div>
+            <div class="p-links">
+              <a href="https://github.com/ayoubbalhouh/salone-prenotazioni#readme" class="btn" target="_blank" rel="noopener">Screenshot e dettagli</a>
+              <a href="https://github.com/ayoubbalhouh/salone-prenotazioni" class="btn btn-outline" target="_blank" rel="noopener">Codice</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project featured reverse" data-cat="wp php">
+          <a class="shot" href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/casale-tema-wp#readme" target="_blank" rel="noopener" aria-label="Apri il tema Casale">
+            <span class="browser"><i></i><i></i><i></i></span>
+            <img src="img/casale-wp.jpg" alt="Tema WordPress Casale per agriturismi" loading="lazy">
+          </a>
+          <div class="p-body">
+            <p class="p-kicker">WordPress · Tema a blocchi</p>
+            <h3>Casale</h3>
+            <p>Tema WordPress per agriturismi e B&amp;B, modificabile dall'Editor del sito. Le camere hanno prezzo, ospiti e metratura mostrati nei template con le Block Bindings.</p>
+            <ul class="p-points">
+              <li>Post type "Camere" con campi personalizzati</li>
+              <li>theme.json, 7 pattern, 8 template</li>
+              <li>Testato su WordPress 7.1, zip installabile</li>
+            </ul>
+            <div class="tags"><span>WordPress</span><span>PHP</span><span>theme.json</span><span>Gutenberg</span></div>
+            <div class="p-links">
+              <a href="progetti/casale-tema-wp/casale.zip" class="btn" download>Scarica il tema</a>
+              <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/casale-tema-wp#readme" class="btn btn-outline" target="_blank" rel="noopener">Screenshot e codice</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="grid">
+          <article class="project card" data-cat="js">
+            <a class="shot" href="progetti/conti-fatture/" target="_blank" rel="noopener" aria-label="Apri la demo di Conti">
+              <span class="browser"><i></i><i></i><i></i></span>
+              <img src="img/conti-fatture.jpg" alt="Web app Conti per le fatture" loading="lazy">
+              <span class="live">Demo live ↗</span>
+            </a>
+            <div class="p-body">
+              <p class="p-kicker">Web app</p>
+              <h3>Conti · Gestione fatture</h3>
+              <p>Fatture con IVA e scadenze, grafico del fatturato, PDF, esportazione CSV e controllo della partita IVA.</p>
+              <div class="tags"><span>JavaScript</span><span>CSS</span><span>localStorage</span></div>
+              <div class="p-links">
+                <a href="progetti/conti-fatture/" class="btn btn-sm" target="_blank" rel="noopener">Demo</a>
+                <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/conti-fatture" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Codice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card" data-cat="js mkt">
+            <a class="shot" href="progetti/spinta-agenzia/" target="_blank" rel="noopener" aria-label="Apri la demo di Spinta">
+              <span class="browser"><i></i><i></i><i></i></span>
+              <img src="img/spinta-agenzia.jpg" alt="Landing page dell'agenzia Spinta" loading="lazy">
+              <span class="live">Demo live ↗</span>
+            </a>
+            <div class="p-body">
+              <p class="p-kicker">Landing page · Marketing</p>
+              <h3>Spinta · Agenzia</h3>
+              <p>Preventivo in 3 passi, tracciamento conversioni con dataLayer e UTM, SEO con dati strutturati.</p>
+              <div class="tags"><span>JavaScript</span><span>Tracking</span><span>SEO</span></div>
+              <div class="p-links">
+                <a href="progetti/spinta-agenzia/?debug=1" class="btn btn-sm" target="_blank" rel="noopener">Demo</a>
+                <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/spinta-agenzia" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Codice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card" data-cat="js">
+            <a class="shot" href="progetti/grano-nero/" target="_blank" rel="noopener" aria-label="Apri la demo di Grano Nero">
+              <span class="browser"><i></i><i></i><i></i></span>
+              <img src="img/grano-nero.jpg" alt="E-commerce Grano Nero" loading="lazy">
+              <span class="live">Demo live ↗</span>
+            </a>
+            <div class="p-body">
+              <p class="p-kicker">E-commerce</p>
+              <h3>Grano Nero · Torrefazione</h3>
+              <p>Catalogo con filtri e ricerca, carrello salvato nel browser e checkout con validazione.</p>
+              <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+              <div class="p-links">
+                <a href="progetti/grano-nero/" class="btn btn-sm" target="_blank" rel="noopener">Demo</a>
+                <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/grano-nero" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Codice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card" data-cat="js">
+            <a class="shot" href="progetti/pizzeria-brace/" target="_blank" rel="noopener" aria-label="Apri la demo di Brace">
+              <span class="browser"><i></i><i></i><i></i></span>
+              <img src="img/pizzeria-brace.jpg" alt="Sito della pizzeria Brace" loading="lazy">
+              <span class="live">Demo live ↗</span>
+            </a>
+            <div class="p-body">
+              <p class="p-kicker">Ristorazione</p>
+              <h3>Brace · Pizzeria</h3>
+              <p>Menu interattivo e ordine per asporto o consegna, con fasce orarie calcolate dagli orari di apertura.</p>
+              <div class="tags"><span>JavaScript</span><span>SVG</span><span>CSS</span></div>
+              <div class="p-links">
+                <a href="progetti/pizzeria-brace/" class="btn btn-sm" target="_blank" rel="noopener">Demo</a>
+                <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/pizzeria-brace" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Codice</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p class="empty-filter" id="emptyFilter" hidden>Nessun progetto in questa categoria.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- COMPETENZE -->
+  <section id="competenze" class="section dark">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">02 · Competenze</p>
+        <h2>Cosa so fare, e dove l'ho usato.</h2>
+      </div>
+      <div class="skills">
+        <article class="skill">
+          <span class="s-num">⚙</span>
+          <h3>Back-end</h3>
+          <div class="tags"><span>PHP 8</span><span>Laravel</span><span>MySQL</span><span>Eloquent</span><span>API REST</span><span>PHPUnit</span></div>
+          <p class="used">Usato in <a href="https://github.com/ayoubbalhouh/salone-prenotazioni" target="_blank" rel="noopener">Studio Forbice</a></p>
+        </article>
+        <article class="skill">
+          <span class="s-num">◧</span>
+          <h3>WordPress</h3>
+          <div class="tags"><span>Temi a blocchi</span><span>theme.json</span><span>Custom post type</span><span>Block Bindings</span><span>WooCommerce</span></div>
+          <p class="used">Usato in <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io/tree/main/progetti/casale-tema-wp" target="_blank" rel="noopener">Casale</a></p>
+        </article>
+        <article class="skill">
+          <span class="s-num">✦</span>
+          <h3>Front-end</h3>
+          <div class="tags"><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Responsive</span><span>Accessibilità</span><span>jQuery / AJAX</span></div>
+          <p class="used">Usato in <a href="progetti/conti-fatture/">Conti</a>, <a href="progetti/grano-nero/">Grano Nero</a>, <a href="progetti/pizzeria-brace/">Brace</a></p>
+        </article>
+        <article class="skill">
+          <span class="s-num">↗</span>
+          <h3>Digital marketing</h3>
+          <div class="tags"><span>SEO</span><span>Meta Ads</span><span>Tracciamento conversioni</span><span>Social media</span><span>Strumenti AI</span></div>
+          <p class="used">Usato in <a href="progetti/spinta-agenzia/?debug=1">Spinta</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SONO -->
+  <section id="chi-sono" class="section">
+    <div class="container about">
+      <div>
+        <p class="eyebrow">03 · Chi sono</p>
+        <h2>Preciso, affidabile, e imparo in fretta.</h2>
+      </div>
+      <div class="about-text">
+        <p>Sono un <strong>Web Developer certificato</strong> (Fondazione San Nicolò – Accademia delle Professioni, Padova) con una qualifica in <strong>Social Media e Digital Marketing</strong>.</p>
+        <p>Prima dello sviluppo web ho lavorato tre anni come capo macchina in produzione: lì ho imparato a essere preciso, affidabile e a risolvere i problemi in autonomia. Oggi porto la stessa attenzione ai dettagli nel codice.</p>
+        <p>Uso ogni giorno strumenti di <strong>intelligenza artificiale</strong> per scrivere, controllare e migliorare il codice più velocemente.</p>
+        <ul class="facts">
+          <li><span>🇮🇹</span>Italiano C1</li>
+          <li><span>🇬🇧</span>Inglese B2</li>
+          <li><span>🇫🇷</span>Francese B1</li>
+          <li><span>🚗</span>Patente B</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCORSO -->
+  <section id="percorso" class="section soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">04 · Percorso</p>
+        <h2>Da dove arrivo.</h2>
+      </div>
+      <ol class="timeline">
+        <li><span class="when">2025 – 2026</span><div><h3>Tecnico specializzato in Social Media e Digital Marketing</h3><p>Studio Centro Personale e Traduzioni S.r.l., Cittadella</p></div></li>
+        <li><span class="when">2024 – 2025</span><div><h3>Web Developer – Certificazione di competenze professionali</h3><p>Fondazione San Nicolò – Accademia delle Professioni, Padova</p></div></li>
+        <li><span class="when">2022 – 2025</span><div><h3>Capo macchina di produzione</h3><p>Azienda di produzione materie plastiche, Veneto</p></div></li>
+        <li><span class="when">2021 – 2022</span><div><h3>Ingegneria Civile</h3><p>Università degli Studi di Padova</p></div></li>
+        <li><span class="when">2021</span><div><h3>Corso di Manifattura Digitale + stage di 3 mesi</h3><p>ENAIP Veneto</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="section contact">
+    <div class="container contact-inner">
+      <p class="eyebrow">05 · Contatti</p>
+      <h2>Cerchi un junior che<br><span class="grad">consegna?</span> Parliamone.</h2>
+      <p class="lead">Cerco il mio primo ruolo come Junior Web Developer in un'agenzia o in un'azienda. Disponibile anche per tirocinio o apprendistato.</p>
+      <div class="contact-actions">
+        <button class="btn btn-light btn-lg" id="copyEmail" data-email="ayoub.balhouh@yahoo.com">✉ ayoub.balhouh@yahoo.com <em>Copia</em></button>
+        <a href="https://www.linkedin.com/in/ayoub-balhouh-688922360" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/ayoubbalhouh" class="btn btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="CV_Ayoub_Balhouh.pdf" class="btn btn-ghost" download>CV ⇩</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer class="footer">
-  <div class="container">© <span id="year"></span> Ayoub Balhouh · Realizzato con HTML, CSS e JavaScript</div>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Ayoub Balhouh</span>
+    <span>Fatto a mano con HTML, CSS e JavaScript · <a href="https://github.com/ayoubbalhouh/ayoubbalhouh.github.io" target="_blank" rel="noopener">Codice del sito</a></span>
+  </div>
 </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>

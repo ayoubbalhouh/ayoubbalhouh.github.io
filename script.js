@@ -1,38 +1,87 @@
 // Anno nel footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Effetto "macchina da scrivere" sul ruolo
-const roles = ['Junior Web Developer', 'Laravel & PHP', 'WordPress', 'Digital Marketing'];
-const typed = document.querySelector('.typed');
-let roleIndex = 0, charIndex = roles[0].length, deleting = true;
-
-function typeLoop() {
-  const word = roles[roleIndex];
-  typed.textContent = word.slice(0, charIndex);
-  if (deleting) {
-    charIndex--;
-    if (charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
-  } else {
-    charIndex++;
-    if (charIndex === roles[roleIndex].length) { deleting = true; setTimeout(typeLoop, 1800); return; }
-  }
-  setTimeout(typeLoop, deleting ? 45 : 90);
+const roles = ['Laravel & PHP', 'WordPress', 'JavaScript', 'Digital marketing'];
+const typed = document.getElementById('typed');
+if (!reduceMotion) {
+  let r = 0, i = roles[0].length, deleting = true;
+  const tick = () => {
+    typed.textContent = roles[r].slice(0, i);
+    if (deleting) {
+      if (--i === 0) { deleting = false; r = (r + 1) % roles.length; }
+    } else if (++i === roles[r].length) {
+      deleting = true;
+      return setTimeout(tick, 1800);
+    }
+    setTimeout(tick, deleting ? 45 : 85);
+  };
+  setTimeout(tick, 2200);
 }
-setTimeout(typeLoop, 2000);
 
-// Chiude il menu mobile dopo un click
-document.querySelectorAll('.links a').forEach(link =>
-  link.addEventListener('click', () => document.body.classList.remove('menu-open'))
-);
+// Barra di navigazione: sfondo dopo lo scroll e menu mobile
+const nav = document.getElementById('nav');
+const menuBtn = document.getElementById('menuBtn');
+const onScroll = () => nav.classList.toggle('scrolled', scrollY > 30);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-// Animazione delle sezioni allo scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+menuBtn.addEventListener('click', () => {
+  const open = document.body.classList.toggle('menu-open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('#links a').forEach((a) => a.addEventListener('click', () => {
+  document.body.classList.remove('menu-open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}));
+
+// Link attivo in base alla sezione visibile
+const sections = [...document.querySelectorAll('main section[id]')];
+const links = [...document.querySelectorAll('#links a')];
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
   });
-}, { threshold: 0.12 });
+}, { rootMargin: '-45% 0px -50% 0px' });
+sections.forEach((s) => io.observe(s));
 
-document.querySelectorAll('.card, .project, .timeline li, .facts').forEach(el => {
+// Filtro dei progetti
+const chips = document.querySelectorAll('.filters .chip');
+const projects = document.querySelectorAll('.project');
+chips.forEach((chip) => chip.addEventListener('click', () => {
+  const f = chip.dataset.filter;
+  chips.forEach((c) => c.classList.toggle('active', c === chip));
+  let visible = 0;
+  projects.forEach((p) => {
+    const show = f === 'tutti' || p.dataset.cat.split(' ').includes(f);
+    p.classList.toggle('hide', !show);
+    if (show) visible++;
+  });
+  document.getElementById('emptyFilter').hidden = visible > 0;
+}));
+
+// Copia l'email negli appunti
+const toastEl = document.getElementById('toast');
+document.getElementById('copyEmail').addEventListener('click', async (e) => {
+  const email = e.currentTarget.dataset.email;
+  try {
+    await navigator.clipboard.writeText(email);
+    toastEl.textContent = 'Email copiata ✓';
+  } catch {
+    location.href = 'mailto:' + email;
+    return;
+  }
+  toastEl.classList.add('show');
+  setTimeout(() => toastEl.classList.remove('show'), 1800);
+});
+
+// Animazione di entrata allo scroll
+const revealer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); revealer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.section-head, .project, .skill, .about > *, .timeline li, .contact-inner').forEach((el) => {
   el.classList.add('reveal');
-  observer.observe(el);
+  revealer.observe(el);
 });
