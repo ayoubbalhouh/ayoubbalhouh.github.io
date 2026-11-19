@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conti · Fatture e clienti</title>
+<meta name="description" content="Conti: web app per gestire fatture, clienti e incassi. Progetto demo di Ayoub Balhouh.">
+<meta name="theme-color" content="#0f172a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a href="#/" class="brand"><span class="brand-mark">€</span> Conti</a>
+    <nav class="menu" id="menu">
+      <a href="#/" data-route="dashboard"><span>▦</span> Panoramica</a>
+      <a href="#/fatture" data-route="fatture"><span>▤</span> Fatture</a>
+      <a href="#/clienti" data-route="clienti"><span>◉</span> Clienti</a>
+      <a href="#/impostazioni" data-route="impostazioni"><span>⚙</span> Impostazioni</a>
+    </nav>
+    <a href="#/fatture/nuova" class="btn btn-block new-btn">+ Nuova fattura</a>
+    <p class="demo-note">Demo di <strong>Ayoub Balhouh</strong>. I dati restano solo nel tuo browser.</p>
+  </aside>
+
+  <main class="main" id="view" tabindex="-1"></main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog class="modal" id="clientModal">
+  <form method="dialog" id="clientForm" novalidate>
+    <h2 id="clientModalTitle">Nuovo cliente</h2>
+    <label>Ragione sociale / Nome<input name="nome" required></label>
+    <div class="two">
+      <label>Partita IVA<input name="piva" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" placeholder="11 cifre"></label>
+      <label>Città<input name="citta"></label>
+    </div>
+    <label>Email<input name="email" type="email"></label>
+    <p class="form-error" id="clientError"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" value="cancel" id="clientCancel">Annulla</button>
+      <button type="submit" class="btn" value="save">Salva cliente</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
