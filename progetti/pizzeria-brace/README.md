@@ -15,4 +15,6 @@ Sito con ordine online per una pizzeria, realizzato da **Ayoub Balhouh**.
 ## Tecnologie
 HTML5, CSS3, JavaScript vanilla. Nessuna libreria.
 
+Foto: Unsplash.
+
 > Progetto demo: nessun ordine reale.

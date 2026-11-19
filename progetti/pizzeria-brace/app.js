@@ -269,8 +269,6 @@ const io = new IntersectionObserver((entries) => {
 window.addEventListener('scroll', () => $('#header').classList.toggle('scrolled', scrollY > 20), { passive: true });
 
 // ===== Avvio =====
-$('#heroPizza').innerHTML = drawPizza(MENU[0], 7);
-$('#storyArt').innerHTML = drawPizza(item('brace'), 31);
 $('#embers').innerHTML = Array.from({ length: 26 }, () =>
   `<span style="left:${(Math.random() * 100).toFixed(1)}%;animation-delay:${(Math.random() * 8).toFixed(2)}s;animation-duration:${(6 + Math.random() * 6).toFixed(2)}s"></span>`).join('');
 renderStatus();
