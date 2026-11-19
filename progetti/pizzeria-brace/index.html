@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brace · Pizzeria napoletana</title>
+<meta name="description" content="Brace: pizza napoletana cotta nel forno a legna. Ordina online per asporto o consegna. Progetto demo di Ayoub Balhouh.">
+<meta name="theme-color" content="#14110f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo"><span class="logo-mark">◉</span> Brace</a>
+    <nav class="nav">
+      <a href="#menu">Menu</a>
+      <a href="#storia">Chi siamo</a>
+      <a href="#info">Orari e contatti</a>
+    </nav>
+    <button class="btn btn-sm" data-open-order>Ordina ora</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="embers" id="embers" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span> <span id="openStatus">Aperto stasera dalle 18:30</span></p>
+        <h1>Pizza napoletana,<br><em>cotta a 450°.</em></h1>
+        <p class="lead">Impasto lievitato 48 ore, pomodoro San Marzano DOP e mozzarella di bufala. Novanta secondi nel forno a legna e arriva da te ancora fumante.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn">Scegli la tua pizza</a>
+          <a href="#info" class="btn btn-ghost">Dove siamo</a>
+        </div>
+        <ul class="stats">
+          <li><strong>48h</strong><span>lievitazione</span></li>
+          <li><strong>90"</strong><span>in forno</span></li>
+          <li><strong>35'</strong><span>consegna media</span></li>
+        </ul>
+      </div>
+      <div class="hero-pizza" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="spin" id="heroPizza"></div>
+        <div class="price-tag">Margherita<strong>7,00 €</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Il nostro menu</p>
+        <h2>Scegli, aggiungi, ordina.</h2>
+        <p class="muted">Tocca <strong>+</strong> per aggiungere. Il tuo ordine è sempre in basso.</p>
+      </div>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div id="menuList"></div>
+    </div>
+  </section>
+
+  <section id="storia" class="section story">
+    <div class="container story-inner">
+      <div class="story-art" id="storyArt" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">Chi siamo</p>
+        <h2>Una brace accesa dal 2012.</h2>
+        <p>Siamo una piccola pizzeria di quartiere a Padova. Il nostro pizzaiolo ha imparato a Napoli e ogni giorno impasta a mano solo farina, acqua, sale e lievito madre.</p>
+        <p>Usiamo ingredienti di piccoli produttori: pomodoro San Marzano, fior di latte di Agerola, olio extravergine pugliese.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="info" class="section">
+    <div class="container info-grid">
+      <div class="info-card">
+        <h3>Orari</h3>
+        <ul class="hours" id="hours"></ul>
+      </div>
+      <div class="info-card">
+        <h3>Dove siamo</h3>
+        <p>Via dei Forni 8<br>35121 Padova</p>
+        <p class="muted small">Consegna entro 4 km · ordine minimo 12 €</p>
+      </div>
+      <div class="info-card">
+        <h3>Contatti</h3>
+        <p>049 000 0000<br>ciao@brace.example</p>
+        <button class="btn btn-sm" data-open-order>Ordina online</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="logo"><span class="logo-mark">◉</span> Brace</span>
+    <p>Progetto demo realizzato da <strong>Ayoub Balhouh</strong>. Nessun ordine reale.</p>
+  </div>
+</footer>
+
+<!-- Barra ordine sempre visibile -->
+<button class="order-bar" id="orderBar" data-open-order hidden>
+  <span class="ob-count" id="obCount">0</span>
+  <span>Vedi il tuo ordine</span>
+  <strong id="obTotal">0,00 €</strong>
+</button>
+
+<!-- Pannello ordine -->
+<div class="overlay" id="orderPanel" hidden>
+  <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+    <div class="panel-head">
+      <h3 id="panelTitle">Il tuo ordine</h3>
+      <button class="close" data-close aria-label="Chiudi">×</button>
+    </div>
+
+    <div class="panel-body" id="orderStep">
+      <div id="orderItems"></div>
+
+      <div id="orderForm" class="order-form">
+        <div class="segmented" role="radiogroup" aria-label="Tipo di ordine">
+          <label><input type="radio" name="mode" value="asporto" checked><span>🥡 Asporto</span></label>
+          <label><input type="radio" name="mode" value="consegna"><span>🛵 Consegna</span></label>
+        </div>
+
+        <form id="checkout" novalidate>
+          <label>Orario
+            <select name="orario" id="timeSelect"></select>
+          </label>
+          <div class="two">
+            <label>Nome<input name="nome" required autocomplete="given-name" placeholder="Mario"></label>
+            <label>Telefono<input name="telefono" type="tel" required autocomplete="tel" placeholder="333 123 4567" pattern="[0-9 +]{8,}"></label>
+          </div>
+          <div id="addressFields" hidden>
+            <label>Indirizzo<input name="indirizzo" autocomplete="street-address" placeholder="Via Roma 10, Padova"></label>
+            <label><span>Citofono / scala <span class="muted">(facoltativo)</span></span><input name="citofono" placeholder="Rossi, 2° piano"></label>
+          </div>
+          <label><span>Note <span class="muted">(facoltativo)</span></span><textarea name="note" rows="2" placeholder="Es. pizza ben cotta, senza basilico…"></textarea></label>
+
+          <div class="summary">
+            <div class="row"><span>Subtotale</span><span id="sumSub"></span></div>
+            <div class="row" id="rowDelivery" hidden><span>Consegna</span><span>2,00 €</span></div>
+            <div class="row total"><span>Totale</span><span id="sumTotal"></span></div>
+            <p class="warn" id="minWarn" hidden></p>
+          </div>
+          <button class="btn btn-block" type="submit" id="submitBtn">Invia ordine</button>
+          <p class="tiny">Paghi alla consegna o al ritiro · contanti o carta</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel-body success" id="successStep" hidden>
+      <div class="success-pizza" id="successPizza"></div>
+      <h3>Ordine ricevuto!</h3>
+      <p>Ordine <strong id="sOrder"></strong> · <span id="sWhen"></span></p>
+      <ol class="progress">
+        <li class="done">Ricevuto</li>
+        <li class="active">In forno</li>
+        <li id="sLast">Pronto</li>
+      </ol>
+      <p class="muted small">Ti chiameremo al <strong id="sPhone"></strong> se serve.</p>
+      <button class="btn" data-close>Torna al menu</button>
+    </div>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="pizza-art.js"></script>
+<script src="menu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
