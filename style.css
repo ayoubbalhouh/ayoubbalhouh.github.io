@@ -79,7 +79,9 @@ a { color: inherit; text-decoration: none; }
 
 .project { overflow: hidden; display: flex; flex-direction: column; }
 .thumb { height: 170px; display: grid; place-items: center; font-size: 3.4rem; }
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+.project:hover .thumb img { transform: scale(1.04); }
+a.thumb { display: block; overflow: hidden; border-bottom: 1px solid var(--border); }
 .thumb-shop { background: linear-gradient(135deg, #1d4e89, #3b82f6); }
 .thumb-pizza { background: linear-gradient(135deg, #c2410c, #f59e0b); }
 .thumb-me { background: linear-gradient(135deg, #0f766e, #34d399); }
