@@ -141,6 +141,7 @@ h1, h2, h3 { font-family: var(--head); letter-spacing: -.025em; line-height: 1.0
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 20px; }
 .tags span { font-size: .78rem; font-weight: 600; padding: 4px 10px; border-radius: 8px; background: var(--soft); color: #3b4156; }
 .p-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.p-note { font-size: .82rem; color: var(--muted); margin-top: 12px; }
 
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .card { display: flex; flex-direction: column; gap: 18px; }
