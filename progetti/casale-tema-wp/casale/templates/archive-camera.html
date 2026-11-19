@@ -1,0 +1,47 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"640px","justifyContent":"left"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"is-style-etichetta"} -->
+<p class="is-style-etichetta">Dormire al casale</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Le camere</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"1.15rem"}}} -->
+<p class="has-muted-color has-text-color" style="font-size:1.15rem">Tutte con bagno privato, colazione inclusa e vista sui colli o sul vigneto.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":21,"query":{"perPage":12,"pages":0,"offset":0,"postType":"camera","order":"asc","orderBy":"menu_order","inherit":true},"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-query alignwide" style="margin-top:var(--wp--preset--spacing--50)"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"16rem"}} -->
+<!-- wp:group {"className":"casale-camera-card","style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group casale-camera-card"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/5","className":"is-style-arco"} /-->
+
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"casale/camera","args":{"key":"riepilogo"}}}},"textColor":"muted","fontSize":"small","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+<p class="has-muted-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"large","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}}} /-->
+
+<!-- wp:post-excerpt {"excerptLength":22,"textColor":"muted","fontSize":"small"} /-->
+
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"casale/camera","args":{"key":"prezzo"}}}},"textColor":"secondary","style":{"typography":{"fontWeight":"600"}}} -->
+<p class="has-secondary-color has-text-color" style="font-weight:600"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Al momento non ci sono camere pubblicate.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></main>
+<!-- /wp:group -->
+
+<!-- wp:pattern {"slug":"casale/contatti"} /-->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
