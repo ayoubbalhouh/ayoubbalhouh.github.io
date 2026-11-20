@@ -6,7 +6,7 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Effetto "macchina da scrivere" sul ruolo
 const roles = ['Laravel & PHP', 'WordPress', 'JavaScript', 'Digital marketing'];
 const typed = document.getElementById('typed');
-if (!reduceMotion) {
+if (!reduceMotion && typed) {
   let r = 0, i = roles[0].length, deleting = true;
   const tick = () => {
     typed.textContent = roles[r].slice(0, i);

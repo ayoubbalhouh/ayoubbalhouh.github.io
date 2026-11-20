@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayoub Balhouh · Social Media & Content Creator</title>
+<meta name="description" content="Portfolio social di Ayoub Balhouh: grafiche per i social create con Canva, reel e video brevi, pianificazione editoriale. Cittadella (PD).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ayoub Balhouh · Social Media & Content Creator">
+<meta property="og:description" content="Grafiche social, reel e video brevi. Guarda i lavori.">
+<meta property="og:url" content="https://ayoubbalhouh.github.io/social/">
+<meta property="og:locale" content="it_IT">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="../foto.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .s-hero { background: var(--ink); color: #eef0f7; padding: 150px 0 80px; position: relative; overflow: hidden; }
+  .s-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(700px 360px at 85% 0%, rgba(255, 176, 32, .18), transparent 70%), radial-gradient(600px 300px at 0% 100%, rgba(59, 108, 255, .22), transparent 70%); pointer-events: none; }
+  .s-hero .container { position: relative; }
+  .s-hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); font-weight: 800; color: #fff; max-width: 15ch; }
+  .s-hero h1 .grad { color: var(--amber); }
+  .s-hero .lead { color: #b9bfd4; max-width: 60ch; margin: 22px 0 30px; font-size: 1.1rem; }
+  .s-hero .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .back { display: inline-block; color: #b9bfd4; font-weight: 500; margin-bottom: 26px; font-size: .95rem; }
+  .back:hover { color: #fff; }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
+  .item { margin: 0; }
+  .media { border-radius: 18px; overflow: hidden; background: #dfe3ee; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(18, 22, 38, .05), 0 18px 36px rgba(18, 22, 38, .1); }
+  .media img, .media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .post .media { aspect-ratio: 4 / 5; }
+  .reel .media { aspect-ratio: 9 / 16; background: #111; }
+  .item figcaption { padding: 12px 4px 0; }
+  .item figcaption strong { font-family: var(--head); font-size: 1.1rem; display: block; }
+  .item figcaption span { color: var(--muted); font-size: .9rem; }
+
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .service { background: var(--ink-2); border: 1px solid var(--ink-line); border-radius: var(--radius); padding: 26px; }
+  .service h3 { color: #fff; font-size: 1.3rem; margin: 10px 0 8px; }
+  .service p { color: #a9afc5; font-size: .95rem; }
+  .service .s-num { color: var(--amber); font-size: 1.4rem; }
+  .profiles { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="../" class="logo">Ayoub<span>.</span></a>
+    <nav class="links" id="links" aria-label="Menu principale">
+      <a href="#grafiche">Grafiche</a>
+      <a href="#video">Video</a>
+      <a href="#servizi">Cosa faccio</a>
+    </nav>
+    <a href="#contatti" class="btn btn-sm nav-cta">Contattami</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Apri il menu" aria-expanded="false" aria-controls="links"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="s-hero">
+    <div class="container">
+      <a href="../" class="back">← Portfolio web developer</a>
+      <p class="eyebrow" style="color: var(--amber)">Social media &amp; content</p>
+      <h1>Contenuti social che <span class="grad">si fanno guardare.</span></h1>
+      <p class="lead">Grafiche per post, stories e campagne create con <strong>Canva</strong>, reel e video brevi girati e montati da me, in italiano, arabo e inglese. Qualifica di Tecnico in Social Media e Digital Marketing.</p>
+      <div class="hero-actions">
+        <a href="#grafiche" class="btn btn-light">Guarda i lavori ↓</a>
+        <a href="../CV_Ayoub_Balhouh.pdf" class="btn btn-ghost" download>Scarica il CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="grafiche" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">01 · Grafiche</p>
+        <h2>Post, stories e materiali per campagne.</h2>
+      </div>
+      <div class="gallery" id="posts"></div>
+    </div>
+  </section>
+
+  <section id="video" class="section soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">02 · Video</p>
+        <h2>Reel e video brevi, pronti per i social.</h2>
+      </div>
+      <div class="gallery" id="reels"></div>
+    </div>
+  </section>
+
+  <section id="servizi" class="section dark">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">03 · Cosa faccio</p>
+        <h2>Dall'idea al post pubblicato.</h2>
+      </div>
+      <div class="services">
+        <article class="service"><span class="s-num">✦</span><h3>Grafiche social</h3><p>Post, stories, caroselli e materiali per campagne con Canva, coerenti con l'identità del brand.</p></article>
+        <article class="service"><span class="s-num">▶</span><h3>Reel e video brevi</h3><p>Ripresa con smartphone, luce e audio curati, montaggio ed esportazione nei formati giusti.</p></article>
+        <article class="service"><span class="s-num">☰</span><h3>Piano editoriale</h3><p>Calendario dei contenuti, testi e hashtag pianificati in base agli obiettivi.</p></article>
+        <article class="service"><span class="s-num">↗</span><h3>Multilingua</h3><p>Contenuti in italiano, arabo e inglese per raggiungere un pubblico internazionale.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="section contact">
+    <div class="container contact-inner">
+      <p class="eyebrow">04 · Contatti</p>
+      <h2>Ti piace lo stile?<br><span class="grad">Parliamone.</span></h2>
+      <p class="lead">Disponibile per collaborazioni e posizioni come Social Media Manager e Content Creator a Padova, Vicenza e Treviso.</p>
+      <div class="contact-actions">
+        <button class="btn btn-light btn-lg" id="copyEmail" data-email="ayoub.balhouh@yahoo.com">✉ ayoub.balhouh@yahoo.com <em>Copia</em></button>
+        <a href="https://www.linkedin.com/in/ayoub-balhouh-688922360" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <!-- PROFILI SOCIAL: aggiungi qui i link, es. <a href="https://www.instagram.com/..." class="btn btn-ghost" target="_blank" rel="noopener">Instagram ↗</a> -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Ayoub Balhouh</span>
+    <span><a href="../">Portfolio web developer</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // ===== I TUOI LAVORI =====
+  // Grafiche: file in social/img/, formato 4:5 (es. 1080x1350).
+  const POSTS = [
+    // { src: 'img/post-1.jpg', title: 'Titolo', note: 'Post Instagram · Canva' },
+  ];
+  // Video: file in social/video/ (mp4, verticale 9:16) con un'immagine di copertina.
+  const REELS = [
+    // { src: 'video/reel-1.mp4', poster: 'img/reel-1.jpg', title: 'Titolo', note: 'Reel · arabo' },
+  ];
+
+  const make = (cls, inner, title, note) => {
+    const f = document.createElement('figure');
+    f.className = 'item ' + cls;
+    f.innerHTML = `<div class="media">${inner}</div><figcaption><strong></strong><span></span></figcaption>`;
+    f.querySelector('strong').textContent = title;
+    f.querySelector('span').textContent = note;
+    return f;
+  };
+  const posts = document.getElementById('posts');
+  POSTS.forEach((p) => posts.append(make('post', `<img src="${p.src}" alt="" loading="lazy">`, p.title, p.note)));
+  const reels = document.getElementById('reels');
+  REELS.forEach((r) => reels.append(make('reel', `<video src="${r.src}" poster="${r.poster}" controls playsinline preload="none"></video>`, r.title, r.note)));
+  if (!POSTS.length) document.getElementById('grafiche').hidden = true;
+  if (!REELS.length) document.getElementById('video').hidden = true;
+</script>
+<script src="../script.js"></script>
+</body>
+</html>
