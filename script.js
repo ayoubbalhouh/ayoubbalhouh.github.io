@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Effetto "macchina da scrivere" sul ruolo
-const roles = ['Laravel & PHP', 'WordPress', 'JavaScript', 'Digital marketing'];
+const roles = ['Laravel & PHP', 'WordPress', 'JavaScript', 'Social & content'];
 const typed = document.getElementById('typed');
 if (!reduceMotion && typed) {
   let r = 0, i = roles[0].length, deleting = true;
@@ -46,6 +46,24 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
 sections.forEach((s) => io.observe(s));
+
+// Selettore Sviluppo / Social, con link diretti #sviluppo e #social
+const panels = ['sviluppo', 'social'];
+function showPanel(name, scroll) {
+  panels.forEach((p) => {
+    document.getElementById('panel-' + p).hidden = p !== name;
+    document.getElementById('tab-' + p).setAttribute('aria-selected', p === name);
+  });
+  if (name !== 'social') document.querySelectorAll('#panel-social video').forEach((v) => v.pause());
+  if (scroll) document.getElementById('progetti').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+document.querySelectorAll('.sw').forEach((b) => b.addEventListener('click', () => {
+  showPanel(b.dataset.panel, false);
+  history.replaceState(null, '', '#' + b.dataset.panel);
+}));
+const fromHash = () => { const h = location.hash.slice(1); if (panels.includes(h)) showPanel(h, true); };
+addEventListener('hashchange', fromHash);
+fromHash();
 
 // Filtro dei progetti
 const chips = document.querySelectorAll('.filters .chip');

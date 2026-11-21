@@ -30,7 +30,7 @@
       <a href="#competenze">Competenze</a>
       <a href="#chi-sono">Chi sono</a>
       <a href="#percorso">Percorso</a>
-      <a href="social/">Social</a>
+      <a href="#social">Social</a>
     </nav>
     <a href="#contatti" class="btn btn-sm nav-cta">Contattami</a>
     <button class="menu-btn" id="menuBtn" aria-label="Apri il menu" aria-expanded="false" aria-controls="links"><span></span><span></span></button>
@@ -44,16 +44,17 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <p class="status"><span class="dot"></span> Disponibile da subito · Padova, Vicenza, Treviso</p>
-        <h1>Ciao, sono Ayoub.<br>Creo siti e web app che <span class="grad">portano clienti.</span></h1>
+        <h1>Ciao, sono Ayoub.<br>Creo siti, web app e contenuti che <span class="grad">portano clienti.</span></h1>
         <p class="typed-line">Junior Web Developer · <span class="typed" id="typed">Laravel &amp; PHP</span></p>
-        <p class="lead">Sviluppo con <strong>PHP, Laravel, MySQL, WordPress e JavaScript</strong>. Vengo dal digital marketing, quindi penso anche a SEO, conversioni e numeri.</p>
+        <p class="lead">Sviluppo con <strong>PHP, Laravel, MySQL, WordPress e JavaScript</strong> e creo <strong>grafiche e reel per i social</strong>. Ho una qualifica in digital marketing: penso al design, al codice e anche ai numeri.</p>
         <div class="hero-actions">
-          <a href="#progetti" class="btn btn-light">Guarda i progetti ↓</a>
-          <a href="CV_Ayoub_Balhouh.pdf" class="btn btn-ghost" download>Scarica il CV</a>
-        </div>
+          <a href="#sviluppo" class="btn btn-light">Progetti web ↓</a>
+          <a href="#social" class="btn btn-ghost">Grafica e social ↓</a>
+          </div>
+        <p class="cv-line"><a href="CV_Ayoub_Balhouh.pdf" download>Scarica il CV ⇩</a></p>
         <ul class="stats">
           <li><strong>7</strong><span>progetti pubblicati</span></li>
-          <li><strong>34</strong><span>test automatici</span></li>
+          <li><strong>5</strong><span>reel e 6 grafiche</span></li>
           <li><strong>3</strong><span>lingue straniere</span></li>
         </ul>
       </div>
@@ -88,9 +89,15 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">01 · Progetti</p>
-        <h2>Lavori che puoi aprire, provare e leggere riga per riga.</h2>
+        <h2>Lavori che puoi aprire, provare e guardare.</h2>
       </div>
 
+      <div class="switch" role="tablist" aria-label="Tipo di lavori">
+        <button class="sw" role="tab" id="tab-sviluppo" data-panel="sviluppo" aria-selected="true" aria-controls="panel-sviluppo"><span>💻</span> Sviluppo web <em>7 progetti</em></button>
+        <button class="sw" role="tab" id="tab-social" data-panel="social" aria-selected="false" aria-controls="panel-social"><span>🎨</span> Social e grafica <em>5 reel · 6 grafiche</em></button>
+      </div>
+
+      <div class="panel" id="panel-sviluppo" role="tabpanel" aria-labelledby="tab-sviluppo">
       <div class="filters" role="toolbar" aria-label="Filtra i progetti">
         <button class="chip active" data-filter="tutti">Tutti</button>
         <button class="chip" data-filter="php">Laravel / PHP</button>
@@ -243,6 +250,28 @@
         </div>
       </div>
       <p class="empty-filter" id="emptyFilter" hidden>Nessun progetto in questa categoria.</p>
+      </div>
+
+      <div class="panel" id="panel-social" role="tabpanel" aria-labelledby="tab-social" hidden>
+        <p class="panel-intro">Grafiche per post, stories e campagne create con <strong>Canva</strong>, e reel montati con l'aiuto dell'intelligenza artificiale. Musiche originali, senza diritti d'autore.</p>
+        <h3 class="panel-title">Reel</h3>
+        <div class="reels">
+          <figure class="item reel"><div class="media"><video src="social/video/reel-3-showreel.mp4" poster="social/img/reel-3-showreel.jpg" controls playsinline preload="none"></video></div><figcaption><strong>Showreel grafiche social</strong><span>Reel · 24 s</span></figcaption></figure>
+          <figure class="item reel"><div class="media"><video src="social/video/reel-1-moda.mp4" poster="social/img/reel-1-moda.jpg" controls playsinline preload="none"></video></div><figcaption><strong>Nuova collezione moda</strong><span>Reel · 20 s</span></figcaption></figure>
+          <figure class="item reel"><div class="media"><video src="social/video/reel-2-beauty.mp4" poster="social/img/reel-2-beauty.jpg" controls playsinline preload="none"></video></div><figcaption><strong>Skincare di lusso</strong><span>Reel · 18 s</span></figcaption></figure>
+          <figure class="item reel"><div class="media"><video src="social/video/reel-4-ristorante.mp4" poster="social/img/reel-4-ristorante.jpg" controls playsinline preload="none"></video></div><figcaption><strong>Menù di stagione</strong><span>Reel · 20 s</span></figcaption></figure>
+          <figure class="item reel"><div class="media"><video src="social/video/reel-5-digital.mp4" poster="social/img/reel-5-digital.jpg" controls playsinline preload="none"></video></div><figcaption><strong>Agenzia digital e web</strong><span>Reel · 22 s</span></figcaption></figure>
+        </div>
+        <h3 class="panel-title">Grafiche</h3>
+        <div class="posts">
+          <figure class="item post"><a class="media" href="social/img/moda-story.jpg" target="_blank" rel="noopener"><img src="social/img/moda-story.jpg" alt="Nuova collezione moda, Story Instagram · 9:16" loading="lazy"></a><figcaption><strong>Nuova collezione moda</strong><span>Story Instagram · 9:16</span></figcaption></figure>
+          <figure class="item post"><a class="media" href="social/img/skincare.jpg" target="_blank" rel="noopener"><img src="social/img/skincare.jpg" alt="Skincare di lusso, Post Instagram · 4:5" loading="lazy"></a><figcaption><strong>Skincare di lusso</strong><span>Post Instagram · 4:5</span></figcaption></figure>
+          <figure class="item post"><a class="media" href="social/img/ristorante.jpg" target="_blank" rel="noopener"><img src="social/img/ristorante.jpg" alt="Menù stagionale, Post Instagram · 4:5" loading="lazy"></a><figcaption><strong>Menù stagionale</strong><span>Post Instagram · 4:5</span></figcaption></figure>
+          <figure class="item post"><a class="media" href="social/img/evento-poster.jpg" target="_blank" rel="noopener"><img src="social/img/evento-poster.jpg" alt="Evento creativo, Poster" loading="lazy"></a><figcaption><strong>Evento creativo</strong><span>Poster</span></figcaption></figure>
+          <figure class="item post"><a class="media" href="social/img/digital-marketing.jpg" target="_blank" rel="noopener"><img src="social/img/digital-marketing.jpg" alt="Agenzia di digital marketing, Post Instagram · 4:5" loading="lazy"></a><figcaption><strong>Agenzia di digital marketing</strong><span>Post Instagram · 4:5</span></figcaption></figure>
+          <figure class="item post"><a class="media" href="social/img/agenzia-web.jpg" target="_blank" rel="noopener"><img src="social/img/agenzia-web.jpg" alt="Agenzia web, Volantino" loading="lazy"></a><figcaption><strong>Agenzia web</strong><span>Volantino</span></figcaption></figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -276,7 +305,7 @@
           <span class="s-num">↗</span>
           <h3>Digital marketing</h3>
           <div class="tags"><span>SEO</span><span>Meta Ads</span><span>Tracciamento conversioni</span><span>Social media</span><span>Strumenti AI</span></div>
-          <p class="used">Usato in <a href="progetti/spinta-agenzia/?debug=1">Spinta</a> · <a href="social/">Portfolio social →</a></p>
+          <p class="used">Usato in <a href="progetti/spinta-agenzia/?debug=1">Spinta</a> · <a href="#social">Grafiche e reel →</a></p>
         </article>
       </div>
     </div>
@@ -325,7 +354,7 @@
     <div class="container contact-inner">
       <p class="eyebrow">05 · Contatti</p>
       <h2>Cerchi un junior che<br><span class="grad">consegna?</span> Parliamone.</h2>
-      <p class="lead">Cerco il mio primo ruolo come Junior Web Developer in un'agenzia o in un'azienda. Disponibile anche per tirocinio o apprendistato.</p>
+      <p class="lead">Cerco il mio primo ruolo come Junior Web Developer o Social Media &amp; Content Creator, in un'agenzia o in un'azienda. Disponibile anche per tirocinio o apprendistato.</p>
       <div class="contact-actions">
         <button class="btn btn-light btn-lg" id="copyEmail" data-email="ayoub.balhouh@yahoo.com">✉ ayoub.balhouh@yahoo.com <em>Copia</em></button>
         <a href="https://www.linkedin.com/in/ayoub-balhouh-688922360" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn ↗</a>
