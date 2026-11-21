@@ -61,9 +61,21 @@ document.querySelectorAll('.sw').forEach((b) => b.addEventListener('click', () =
   showPanel(b.dataset.panel, false);
   history.replaceState(null, '', '#' + b.dataset.panel);
 }));
+// I link #sviluppo e #social (menu, bottoni, competenze) funzionano a ogni clic,
+// anche quando l'indirizzo ha già quell'hash
+document.querySelectorAll('a[href="#sviluppo"], a[href="#social"]').forEach((a) => a.addEventListener('click', (e) => {
+  e.preventDefault();
+  const name = a.getAttribute('href').slice(1);
+  history.replaceState(null, '', '#' + name);
+  showPanel(name, true);
+}));
 const fromHash = () => { const h = location.hash.slice(1); if (panels.includes(h)) showPanel(h, true); };
 addEventListener('hashchange', fromHash);
-fromHash();
+// All'apertura con #social: aspetta che la pagina sia disegnata, poi scorre
+if (panels.includes(location.hash.slice(1))) {
+  showPanel(location.hash.slice(1), false);
+  addEventListener('load', () => setTimeout(() => document.getElementById('progetti').scrollIntoView(), 50));
+}
 
 // Filtro dei progetti
 const chips = document.querySelectorAll('.filters .chip');
