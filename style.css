@@ -84,11 +84,10 @@ h1, h2, h3 { font-family: var(--head); letter-spacing: -.025em; line-height: 1.0
 .stats strong { display: block; font-family: var(--serif); font-size: 2.8rem; font-weight: 500; color: var(--lux-ivory); line-height: 1; }
 .stats span { font-size: .78rem; letter-spacing: .06em; color: var(--lux-muted); }
 
-.portrait { margin: 0; justify-self: center; width: min(400px, 100%); }
-.arch { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px 4px 4px; overflow: hidden; background: #1a1815; }
-.arch::after { content: ""; position: absolute; inset: 10px; border: 1px solid rgba(242, 236, 226, .35); border-radius: 999px 999px 2px 2px; pointer-events: none; }
-.arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: saturate(.85) contrast(1.03); }
-.portrait figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--lux-line); margin-top: 20px; font-size: .86rem; color: var(--lux-muted); }
+.portrait { margin: 0; justify-self: center; width: min(280px, 100%); text-align: center; }
+.arch { position: relative; aspect-ratio: 1; border-radius: 50%; padding: 8px; border: 1px solid var(--lux-gold); }
+.arch img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center 25%; filter: saturate(.85) contrast(1.03); }
+.portrait figcaption { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 22px; font-size: .86rem; color: var(--lux-muted); }
 .avail { display: flex; align-items: center; gap: 8px; }
 .avail i { width: 6px; height: 6px; border-radius: 50%; background: #7fb89a; }
 .portrait figcaption a { color: var(--lux-gold); text-decoration: underline; text-underline-offset: 4px; }
@@ -233,7 +232,8 @@ h1, h2, h3 { font-family: var(--head); letter-spacing: -.025em; line-height: 1.0
   .menu-open .nav { background: var(--paper); color: var(--text); }
   .hero { padding: 112px 0 72px; }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
-  .portrait { width: min(320px, 100%); justify-self: start; }
+  .portrait { width: 190px; justify-self: start; text-align: left; }
+  .portrait figcaption { align-items: flex-start; }
   .about { grid-template-columns: 1fr; gap: 24px; }
   .grid { grid-template-columns: 1fr; }
   .timeline::before { left: 6px; }
